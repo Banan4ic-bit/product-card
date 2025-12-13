@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карточка продукта</title>
+</head>
+<body>
+  <div class="product_card"> 
+    <img src="img/mousse.jpg" alt="Увлажняющий мусс" width="290" height="245" class="product_card_photo" >
+
+      <!-- Я вставила span в div, так как img и span ставится в одну строку 
+       и по заданию сделать карточку без стилей, потом я уберу div и будет стилизовано-->
+
+      <div> 
+        <span class="product_card_category">Для нормальной кожи</span>
+      </div>
+      <h2 class="product_card_name">Увлажняющий мусс</h2>
+      <p class="product_card_description">Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой</p>
+    <div class="product_card_compound_wrapper">
+      <span class="product_card_compound_label">Состав:</span>
+      <ul class="product_card_compound">
+        <li>активные натуральные комплексы</li>
+        <li>витамины C, A, PP, B и E</li>
+        <li>солнцезащитные компоненты</li>
+      </ul>
+    </div>
+    <div class="product_card_price">
+      <span class="product_card_text_price">Цена</span>
+      <span class="product_card_value_price">2 750 &#8381;</span>
+    </div>
+    <button class="product_card_button">Купить</button>
+  </div>
+</body>
+</html>
