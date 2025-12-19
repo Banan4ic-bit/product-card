@@ -21,7 +21,7 @@ body {
 .container {
   background-position: top left;
   background-repeat: no-repeat;
-  background-image: url(/img/bg.png);
+  background-image: url("/img/bg_flowers.png");
   width: 1110px;
   margin: 0 auto;
   padding-top: 220px;
