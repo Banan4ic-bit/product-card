@@ -1,65 +1,60 @@
-//Покраска первой карточки 
+  //Покраска первой карточки 
 
-const firstProductCard = document.querySelector('.product_card');
-const changeColorFirstCardButton = document.querySelector('#control-first-card-button');
-const greenColorHash = '#00FF00';
-const blueColorHash = '#0000FF';
+  const firstProductCard = document.querySelector('.product_card');
+  const colorChangeFirstCardButton = document.querySelector('#control-first-card-button');
+  const greenColorHash = '#00FF00';
+  const blueColorHash = '#0000FF';
 
-changeColorFirstCardButton.addEventListener('click', () => {
-  firstProductCard.style.backgroundColor = greenColorHash;
-})
+  colorChangeFirstCardButton.addEventListener('click', () => {
+    firstProductCard.style.backgroundColor = greenColorHash;
+  })
 
-//Покраска всех карточек 
+  //Покраска всех карточек 
 
-const productCards = document.querySelectorAll('.product_card');
-const changeColorAllCardsButton = document.querySelector('#control-all-cards-button');
+  const productCards = document.querySelectorAll('.product_card');
+  const colorChangeAllProductCardsButton = document.querySelector('#control-all-cards-button');
 
-changeColorAllCardsButton.addEventListener('click', () => {
-  productCards.forEach((card) => card.style.backgroundColor = blueColorHash);
-})
+  colorChangeAllProductCardsButton.addEventListener('click', () => {
+    productCards.forEach((card) => card.style.backgroundColor = blueColorHash);
+  })
 
-//Открыть google
+  //Открыть google
 
-const openGoogleButton = document.querySelector('#external-link-button');
+  const googleLinkOpenButton = document.querySelector('#external-link-button');
 
-openGoogleButton.addEventListener('click', () => {
-  const answer = confirm('Вы действительно хотите перейти на этот сайт?');
-  if (answer === true) {
-    window.open('https://google.com')
+  googleLinkOpenButton.addEventListener('click', () => {
+    const answer = confirm('Вы действительно хотите перейти на этот сайт?');
+    if (answer === true) {
+      window.open('https://google.com')
+    }
+    else {
+      return;
+    }
+  })
+
+  //Вывод консоль лог 
+
+  const logMessageButton = document.querySelector('#log-button');
+
+  logMessageButton.addEventListener ('click', () => outputMessage('Дз 4'));
+
+  function outputMessage(message) {
+    alert('Иди нахуй')
+    console.log(message)
   }
-  else {
-    return;
-  }
-})
 
-//Вывод консоль лог 
+  //Вывод содержимого заголовка в console log 
 
-const outputConsoleLogButton = document.querySelector('#log-button');
+  const contentTitleOutputLog = document.querySelector('.title');
 
-outputConsoleLogButton.addEventListener ('click', () => outputConsoleLog('Дз 4'));
+  contentTitleOutputLog.addEventListener('mouseover', () => {
+    console.log(contentTitleOutputLog.textContent);
+  })
 
-function outputConsoleLog(message) {
-  alert('Иди нахуй')
-  console.log(message)
-}
+  //Смена цвета кнопки с одного на другой 
 
-//Вывод заголовка h1 в console log 
+  const colorToggleButton = document.querySelector('#control-toggle-button')
 
-const outputH1ConsoleLog = document.querySelector('.title');
-
-outputH1ConsoleLog.addEventListener('mouseover', () => {
-  console.log(outputH1ConsoleLog.textContent);
-})
-
-//Смена цвета кнопки с одной на другой 
-
-const changeColors = document.querySelector('#control-toggle-button')
-
-changeColors.addEventListener('click', () => {
-  if (changeColors.classList.contains('btn-red')) {
-    changeColors.classList.replace('btn-red', 'btn-black')
-  }
-  else {
-    changeColors.classList.replace('btn-black', 'btn-red')
-  }
-})
+  colorToggleButton.addEventListener('click', () => {
+    colorToggleButton.classList.toggle('control-button--modified');
+  })
