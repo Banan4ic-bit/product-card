@@ -27,6 +27,29 @@ body {
   padding-top: 220px;
 }
 
+.control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.control-buttons button {
+  width: 200px;
+  height: 70px;
+}
+
+.control-button {
+  background-color: rebeccapurple;
+  color: aquamarine;
+}
+
+.control-button--modified {
+  background-color: black;
+  color: white;
+}
+
 .product_card_list {
   display: flex;
   flex-wrap: wrap;
