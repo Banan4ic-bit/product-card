@@ -27,6 +27,27 @@ body {
   padding-top: 220px;
 }
 
+.card-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.card-controls button {
+  width: 200px;
+  height: 70px;
+}
+.btn-black {
+  background-color: black;
+  color: white;
+}
+
+.btn-red {
+  background-color: red;
+  color: rgb(2, 245, 152);
+}
+
 .product_card_list {
   display: flex;
   flex-wrap: wrap;
