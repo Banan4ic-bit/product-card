@@ -1,33 +1,33 @@
 // Задание №1
 //Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль "Сейчас в X температура  — Y градусов по Цельсию"
 
-function weather (city, temperature) {
+function showWeather(city, temperature) {
   console.log(`Сейчас в городе ${city} температура - ${temperature} градусов по Цельсию`);
 }
 
-weather ("Измаил", 15)
+showWeather("Измаил", 15)
 
 /*
 Задание №2
 //Создать переменную, которая хранит внутри себя скорость света (гуглим). Создать функцию, которая принимает 1 аргумент - скорость, 
 // внутри функции происходит проверка: если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", если ниже — 
-// "Субсветовая  скорость"? если равна — "Скорость света"
+// "Субсветовая скорость"? если равна — "Скорость света"
 */
 
 const LIGHT_SPEED = 299792458 
 
-function checkSpeed (speed) {
+function showSpeedType(speed) {
   if (speed > LIGHT_SPEED) {
     console.log('Сверхсветовая скорость')
   } else if (speed === LIGHT_SPEED) {
     console.log('Скорость света')
   }
   else {
-    console.log ('Cубсветовая  скорость')
+    console.log('Cубсветовая скорость')
   }
 }
 
-checkSpeed(29979245888)
+showSpeedType(29979245888)
 
 /*
 Задание №3
@@ -38,15 +38,15 @@ Cоздать переменную №1, которая содержит про�
 */
 
 const productName = 'Авокадо'
-const priceOfProduct = 40
+const productPrice = 40
 
-function checkBudget (budget) {
-  if (budget >= priceOfProduct) {
+function tryBuyProduct(budget) {
+  if (budget >= productPrice) {
     console.log(`${productName} приобретен. Спасибо за покупку!`)
   } else {
-    const scarcity = priceOfProduct - budget 
-    console.log (`Вам не хватает ${scarcity} грн, пополните баланс, нищий`)
+    const scarcity = productPrice - budget 
+    console.log(`Вам не хватает ${scarcity} грн, пополните баланс, нищий`)
   }
 }
 
-checkBudget(4)
+tryBuyProduct(4)
