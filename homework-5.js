@@ -16,7 +16,7 @@ showWeather("Измаил", 15)
 
 const LIGHT_SPEED = 299792458 
 
-function showSpeedType(speed) {
+function compareSpeed(speed) {
   if (speed > LIGHT_SPEED) {
     console.log('Сверхсветовая скорость')
   } else if (speed === LIGHT_SPEED) {
@@ -27,7 +27,7 @@ function showSpeedType(speed) {
   }
 }
 
-showSpeedType(29979245888)
+compareSpeed(2997)
 
 /*
 Задание №3
@@ -40,13 +40,13 @@ Cоздать переменную №1, которая содержит про�
 const productName = 'Авокадо'
 const productPrice = 40
 
-function tryBuyProduct(budget) {
+function buyProduct(budget) {
   if (budget >= productPrice) {
     console.log(`${productName} приобретен. Спасибо за покупку!`)
   } else {
     const scarcity = productPrice - budget 
-    console.log(`Вам не хватает ${scarcity} грн, пополните баланс, нищий`)
+    console.log(`Вам не хватает ${scarcity} грн, пополните баланс, багач`)
   }
 }
 
-tryBuyProduct(4)
+buyProduct(39)
