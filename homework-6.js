@@ -165,7 +165,7 @@ console.log(allBooks);
 // устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), 
 // нет - false (значит это не редкий).
 
-const getBooksMarvel = booksMarvel.map(function (book) {
+const booksMarvelUpdated = booksMarvel.map(function (book) {
   const updateBook = {...book};
   if (updateBook.year <= 2000) {
     updateBook.isRare = true
@@ -175,4 +175,4 @@ const getBooksMarvel = booksMarvel.map(function (book) {
   return updateBook;
 })
 
-console.log(getBooksMarvel);
+console.log(booksMarvelUpdated);
