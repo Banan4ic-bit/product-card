@@ -33,7 +33,7 @@ console.log(luxCar)
 // Она проверяет, есть ли в объекте свойство "максимальная скорость", если нет - добавляет его и задает значение, 
 // если есть - прекращает выполнение (ничего не делает)
 
-function checkKey(car) {
+function ensureMaxSpeed(car) {
   if(car.maxSpeed) {
     return;
   }
@@ -42,17 +42,17 @@ function checkKey(car) {
   }
 }
 
-checkKey(luxCar);
+ensureMaxSpeed(luxCar);
 console.log(luxCar);
 
 //6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, 
 // которое нужно вывести и выводит его значение.
 
-function showValue(object, property) {
+function showValueObject(object, property) {
   console.log(property + ":", object[property]);
 }
 
-showValue(luxCar, "brand");
+showValueObject(luxCar, "brand");
 
 //7. Создать массив, который содержит названия продуктов (просто строки)
 
@@ -119,7 +119,7 @@ console.log(books);
 // (Если используете другую, свою сущность - импровизируйте). С помощью известного нам метода массива или оператора (рекомендую использовать оператор), 
 // объединить эти два массива в один
 
-const booksMarvel = [
+const marvelBooks = [
   {
     title: "Spider-Man: Hostile Takeover",
     author: "David Liss",
@@ -157,7 +157,7 @@ const booksMarvel = [
   },
 ];
 
-const allBooks = [...books, ...booksMarvel];
+const allBooks = [...books, ...marvelBooks];
 console.log(allBooks);
 
 //10. Почитать про метод массива — map. Написать функцию, которая принимает массив сущностей с задания №9. 
@@ -165,7 +165,7 @@ console.log(allBooks);
 // устанавливаем true или false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), 
 // нет - false (значит это не редкий).
 
-const booksMarvelUpdated = booksMarvel.map(function (book) {
+const marvelBooksUpdated = marvelBooks.map(function (book) {
   const updateBook = {...book};
   if (updateBook.year <= 2000) {
     updateBook.isRare = true
@@ -175,4 +175,4 @@ const booksMarvelUpdated = booksMarvel.map(function (book) {
   return updateBook;
 })
 
-console.log(booksMarvelUpdated);
+console.log(marvelBooksUpdated);
