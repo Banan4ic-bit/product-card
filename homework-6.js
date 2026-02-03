@@ -48,7 +48,7 @@ console.log(luxCar);
 //6. Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта, 
 // которое нужно вывести и выводит его значение.
 
-function showValueObject(object, property) {
+function showObjectProperty(object, property) {
   console.log(property + ":", object[property]);
 }
 
