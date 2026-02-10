@@ -10,9 +10,9 @@ console.log(numbersForFive);
 
 const movies = ['человек паук','железный человек', 'халк', 'стражи галактики', 'джокер']
 
-const input = prompt("Введите название фильма").trim().toLowerCase()
-const movie = movies.includes(input);
-console.log(movie);
+const movieInput = prompt("Введите название фильма").trim().toLowerCase()
+const movieResult = movies.includes(movieInput);
+console.log(movieResult);
 
 //4. Перевернуть массив без изменения оригинала
 
