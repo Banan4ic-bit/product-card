@@ -20,17 +20,17 @@ console.log(productCardNamesWithDescription);
 function getCardsCount() {
   const input = prompt("Сколько карточек отобразить? От 1 до 5");
 
-  if (input === null){
-    alert("Вы не ввели число, поэтому хуй тебе, а не карточки")
+  if (input === null) {
+    alert("Вы не ввели число")
     return null
   }
 
   const count = Number(input.trim());
   
-  if (Number.isInteger(count) && count >=1 && count <=5){
+  if (Number.isInteger(count) && count >= 1 && count <= 5) {
     return count
   } else {
-    alert("Вы ввели направильное число")
+    alert("Вы ввели неправильное число")
     return null
   }
 }
@@ -38,20 +38,24 @@ function getCardsCount() {
 const count = getCardsCount()
 
 function setText(clone, selector, value) {
-  clone.querySelector(selector).textContent = value
-}
+  const element = clone.querySelector(selector);
 
-function setSrc(clone, selector, value) {
-  clone.querySelector(selector).src =value
+  if (element) {
+    element.textContent = value
+  } else {
+    console.warn(`Ошибка: Селектор "${selector}" не найден в шаблоне`);
+  }
 }
 
 function renderCards(cardsArray) {
   productCardList.innerHTML = ""
 
   cardsArray.forEach(card => {
-    const productCardClone = productCardTemplate.content.cloneNode(true)
+    const productCardClone = productCardTemplate.content.cloneNode(true);
 
-    setSrc(productCardClone, '.product_card_photo', card.photo)
+    const img = productCardClone.querySelector('.product_card_image');
+    img.src = `img/${card.image}`
+    img.alt = card.name
 
     setText(productCardClone, '.product_card_category', card.category)
     setText(productCardClone, '.product_card_name', card.name)
@@ -59,7 +63,7 @@ function renderCards(cardsArray) {
     setText(productCardClone, '.product_card_price_value', `${card.price} ₽`)
     
     const compoundList = productCardClone.querySelector('.product_card_compound');
-    card.compound.forEach (item => {
+    card.compound.forEach(item => {
       const li = document.createElement('li');
       li.textContent = item;
       compoundList.appendChild(li)
