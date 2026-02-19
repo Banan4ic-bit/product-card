@@ -54,7 +54,7 @@ function renderCards(cardsArray) {
     const productCardClone = productCardTemplate.content.cloneNode(true);
 
     const img = productCardClone.querySelector('.product_card_image');
-    img.src = `img/${card.image}`
+    img.src = `img/${card.image}.jpg`
     img.alt = card.name
 
     setText(productCardClone, '.product_card_category', card.category)
