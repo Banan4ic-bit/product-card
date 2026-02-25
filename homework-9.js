@@ -3,14 +3,17 @@
 // Если форма валидна — выводим в консоль объект вида: { email: значение }.
 const formSubscribe = document.querySelector(".footer_form");
 
+function getFormData(form) {
+  const obj = Object.fromEntries(new FormData(form).entries())
+  return obj;
+}
+
 formSubscribe.addEventListener("submit", (event) => {
   event.preventDefault()
 
   if (formSubscribe.checkValidity()) {
-    const formData = new FormData(formSubscribe)
-    const emailObj = {
-      "email" : formData.get("email")
-    }
+    const data = getFormData(formSubscribe)
+    const emailObj = {email : data.email}
     console.log(emailObj)
   } else {
     console.warn("Вы не ввели правильно email")
@@ -59,11 +62,11 @@ let user = null;
 
 formRegistration.addEventListener("submit", (event) => {
   event.preventDefault();
-  const formData = new FormData(formRegistration)
 
   if (formRegistration.checkValidity()) {
-    if (formData.get("password") === formData.get("confirm_password")) {
-      user = Object.fromEntries(formData.entries())
+      const data = getFormData(formRegistration)
+    if (data.password === data.confirm_password) {
+      user = data;
       user.createdOn = new Date().toLocaleDateString("uk-UA")
       alert("Регистрация прошла успешно, ваша информация в консоль логе")
       console.log(user)
