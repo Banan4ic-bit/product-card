@@ -18,6 +18,7 @@
       <button id="external-link-button">Открыть гугл</button>
       <button id="log-button">Вывести сообщение в консоль лог</button>
       <button id="control-toggle-button" class="control-button control-button--modified">Поменять цвет кнопки</button>
+      
     </div>
 
     <ul id="product_card_list" class="product_card_list">    </ul>
@@ -39,7 +40,85 @@
       </div>
       </li>
     </template>
-    
+  </div>
+
+  
+  <footer class="footer">
+    <div class="footer_container">
+      <div class="footer_wrapper">
+        <div class="footer_about">
+          <h2 class="footer_logo">Product Cards</h2>
+          <p class="footer_description">У нас самые лучшие продукты для кожи!</p>
+          <div class="footer_icons">
+            <a href="#" class="footer_telegramm">
+              <img src="img/telegramm_icon.svg" alt="Telegram" width="21" height="18">
+            </a>
+            <a href="#" class="footer_vk">
+              <img src="img/vk_icon.svg" alt="VK" width="24" height="14">
+            </a>
+          </div>
+        </div>
+        <div class="footer_subscribe">
+          <h3 class="footer_subscribe-title">Подпишись на наши акции</h3>
+          <form class="footer_form">
+            <input 
+            type="email"
+            name="email"
+            class="footer_form-email"
+            placeholder="Введите Email..."
+            required
+            autocomplete="on"
+            >
+            <button type="submit" class="footer_form-btn">Подписаться</button>
+          </form>
+          <button type="button" class="registration"></button>
+        </div>
+          <nav class="footer_nav">
+            <h3 class="footer_nav-name">Быстрые ссылки</h3>
+            <ul class="footer_nav-list">
+              <li class="footer_nav-item">
+                <a href="#" class="footer_nav-link">Главная</a>
+              </li>
+              <li class="footer_nav-item">
+                <a href="#" class="footer_nav-link">Магазин</a>
+              </li>
+              <li class="footer_nav-item">
+                <a href="#" class="footer_nav-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <p class="footer_rights">www.slick.com © all right reserve</p>
+    </div>
+  </footer>
+
+  <div class="overlay"></div>
+  <div class="modal">
+    <button type="button" class="modal_close"></button>
+    <form action="" class="form_registration">
+      <label for="username">Имя:</label>
+        <input type="text" id="username" name="username" placeholder="Иван" required>
+
+      <label for="surname">Фамилия:</label>
+        <input type="text" id="surname" name="surname" placeholder="Иванович" required>
+        
+      <label for="birthday">Дата рождения:</label>
+        <input type="date" id="birthday" name="birthday" placeholder="20.06.1995" required>
+
+      <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" placeholder="Ivan22" minlength="4" maxlength="15" required>
+      
+      <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" minlength="6" maxlength="15" required>
+      
+      <label for="confirm_password">Подтверждение пароля:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+      
+      <div class="buttons">
+        <button type="submit" class="submit_button form_button"></button>
+        <button type="reset" class="reset_button form_button"></button>
+      </div>
+    </form>
   </div>
 
   <script src="main.js"></script>
@@ -47,5 +126,6 @@
   <script src="homework-6.js"></script>
   <script type="module" src="homework-7.js"></script>
   <script type="module" src="homework-8.js"></script>
+  <script src="homework-9.js"></script>
 </body>
 </html>
