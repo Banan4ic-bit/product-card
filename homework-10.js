@@ -1,6 +1,8 @@
 import { Form } from "./Form.js";
 import { Modal } from "./Modal.js";
-import { Game, SingleGame, OnlineGame } from "./Game.js";
+import { Game } from "./Game.js";
+import { OnlineGame } from "./OnlineGame.js";
+import { SingleGame } from "./SingleGame.js";
 
 const formSubscribe = new Form('footer_form_subscrb')
 
@@ -45,3 +47,11 @@ formRegistration.form.addEventListener("submit", (event) => {
     return
   } 
 })
+
+
+//Создание экземпляра классов Game, SingleGame, OnlineGame 
+const battlefield = new OnlineGame("battlefield", "shooter", 2019, 60)
+battlefield.startServer();
+
+const theWitcher = new SingleGame("Witcher 3", "Action", 2015, 80)
+theWitcher.description();

@@ -3,7 +3,7 @@ export class Form {
     this.form = document.getElementById(formId);
   }
 
-  getFormData() {
+  getFormValue() {
     return Object.fromEntries(new FormData(this.form).entries());
   }
 
@@ -11,7 +11,7 @@ export class Form {
     return this.form.checkValidity();
   }
 
-  resetFormData() {
+  reset() {
     this.form.reset();
   }
 }
