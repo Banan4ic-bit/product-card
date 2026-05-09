@@ -52,7 +52,7 @@ function showObjectProperty(object, property) {
   console.log(property + ":", object[property]);
 }
 
-showValueObject(luxCar, "brand");
+showObjectProperty(luxCar, "brand");
 
 //7. Создать массив, который содержит названия продуктов (просто строки)
 

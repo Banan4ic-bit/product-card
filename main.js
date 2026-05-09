@@ -1,3 +1,9 @@
+  import "./homework-5.js";
+  import "./homework-6.js";
+  import "./homework-7.js";
+  import "./homework-8.js";
+  import "./homework-10.js";
+  
   //Покраска первой карточки 
 
   const firstProductCard = document.querySelector('.product_card');

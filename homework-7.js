@@ -12,7 +12,7 @@ const movies = ['человек паук','железный человек', 'х
 
 const movieInput = prompt("Введите название фильма").trim().toLowerCase()
 const isMovieExists = movies.includes(movieInput);
-console.log(movieResult);
+console.log(isMovieExists);
 
 //4. Перевернуть массив без изменения оригинала
 
