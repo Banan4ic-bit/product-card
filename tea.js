@@ -1,6 +1,7 @@
 import { Drink } from "./Drink.js";
 
 export class Tea extends Drink {
+
   constructor(name, size, price, teaType, teaFormat) {
     super(name, size, price)
     this.teaType = teaType;
@@ -15,4 +16,5 @@ export class Tea extends Drink {
     console.log(`${this.name}, берем размер ${this.size}, формат ${this.teaFormat} типа ${this.teaType} в кружку закидываем и заливаем кипяток`)
     this.setTemperature(100)
   }
+  
 }

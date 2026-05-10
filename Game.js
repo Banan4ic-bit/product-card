@@ -1,4 +1,5 @@
 export class Game {
+  
   constructor(name,category, releaseYear) {
     this.name = name;
     this.category = category;
@@ -7,6 +8,7 @@ export class Game {
 
   release() {
     console.log(`Игра${this.name}, жанра:${this.category} была выпущена в ${this.releaseYear}`)
-  }                                                                                                                                                                              
+  }        
+                                                                                                                                                                        
 }
 

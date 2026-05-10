@@ -1,4 +1,5 @@
 export class Drink {
+
   #temperature
   constructor(name, size, price, temperature) {
     this.name = name;
@@ -20,7 +21,7 @@ export class Drink {
   }
 
   prepare() {
-
+    console.log("Готовка напитка")
   }
 
   serve() {
@@ -29,5 +30,6 @@ export class Drink {
     console.log(this.getTemperature())
     console.log(`Напиток ${this.name} подано`)
   }
+
 }
 

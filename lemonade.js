@@ -1,6 +1,7 @@
 import { Drink } from "./Drink.js";
 
 export class Lemonade extends Drink {
+  
   constructor(name, size, price, lemonadeType, additive) {
     super(name, size, price);
     this.lemonadeType = lemonadeType;
@@ -15,4 +16,5 @@ export class Lemonade extends Drink {
     console.log(`${this.lemonadeType} лимонад готовится, добавляем еще ${this.additive}`)
     this.setTemperature(10)
   }
+  
 }

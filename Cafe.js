@@ -1,4 +1,5 @@
 export class Cafe {
+
   constructor(name, city) {
     this.name = name;
     this.city = city;
@@ -11,4 +12,5 @@ export class Cafe {
   orderDrink(drink) {
     drink.serve()
   }
+  
 }
