@@ -36,8 +36,9 @@ export class Modal {
   }
 
   #initClose() { 
+    this.overlay.addEventListener('click', this.closeFn)
+    
     if (this.shouldCloseOnOverlay) {
-      this.overlay.addEventListener('click', this.closeFn)
       this.closeButton.addEventListener('click', this.closeFn)
     }
   }
