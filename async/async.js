@@ -24,6 +24,7 @@ function renderUsers(array) {
   })
 }
 
+
 function delay(ms) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -32,23 +33,27 @@ function delay(ms) {
   });
 }
 
+function saveUsers(array) {
+  localStorage.setItem('users', JSON.stringify(array));
+}
+
 function deleteAllUsers() {
   users = [];
-  localStorage.setItem('users', JSON.stringify(users))
+  saveUsers(users);
 }
 
 async function loadUsers() {
   loadingMessage.textContent = "Данные загружаются"
   await delay(3000)
   users = await getUsers();
-  localStorage.setItem('users', JSON.stringify(users))
+  saveUsers(users);
   loadingMessage.textContent = ""
   renderUsers(users);
 }
 
 function deleteUser(userId) {
   users = users.filter(user => user.id !== userId);
-  localStorage.setItem('users', JSON.stringify(users));
+  saveUsers(users);
 }
 
 const loadingMessage = document.querySelector('.load');
