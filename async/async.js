@@ -8,7 +8,7 @@ async function getUsers() {
 const cardTemplate = document.getElementById('card-template')
 const cardList = document.getElementById('users-list')
 
-function renderUsers (array) {
+function renderUsers(array) {
   cardList.querySelectorAll('.card').forEach(card => {
   card.remove();
   });
@@ -32,26 +32,40 @@ function delay(ms) {
   });
 }
 
-const load = document.querySelector('.load');
+function deleteAllUsers() {
+  users = [];
+  localStorage.setItem('users', JSON.stringify(users))
+}
+
+async function loadUsers() {
+  loadingMessage.textContent = "Данные загружаются"
+  await delay(3000)
+  users = await getUsers();
+  localStorage.setItem('users', JSON.stringify(users))
+  loadingMessage.textContent = ""
+  renderUsers(users);
+}
+
+function deleteUser(userId) {
+  users = users.filter(user => user.id !== userId);
+  localStorage.setItem('users', JSON.stringify(users));
+}
+
+const loadingMessage = document.querySelector('.load');
 let users = [];
 
 async function init() {
-  const userString = localStorage.getItem('users');
-try {
-      if (userString !== null) {
-      users = JSON.parse(userString);
+  const usersFromStorage = localStorage.getItem('users');
+
+  try {
+    if (usersFromStorage !== null) {
+      users = JSON.parse(usersFromStorage);
       renderUsers(users)  
     } else {
-      load.textContent = "Данные загружаются"
-      await delay(3000)
-      users = await getUsers();
-      localStorage.setItem('users', JSON.stringify(users))
-      load.textContent = ""
-      renderUsers(users);
+      await loadUsers()
     }
   } catch (error) {
-    load.textContent = "Ошибка загрузки";
-    
+    loadingMessage.textContent = "Ошибка загрузки";
     console.log(error)
   }
 }
@@ -61,28 +75,24 @@ init()
 const deleteAll = document.getElementById('delete-all');
 const getCards = document.getElementById('get-cards');
 
+//Удалить всех пользователей
 deleteAll.addEventListener('click', ()=> {
   cardList.querySelectorAll('.card').forEach(card => {
     card.remove();
   })
-  users = [];
-  localStorage.setItem('users', JSON.stringify(users))
+  deleteAllUsers()
 })
 
+//Удалить определенного пользователя по ID
 cardList.addEventListener('click', (event) => {
   if (event.target.matches('[data-user-id]')) {
     const userId = parseInt(event.target.getAttribute('data-user-id'))
-    users = users.filter(user => user.id !== userId)
-    localStorage.setItem('users', JSON.stringify(users));
+    deleteUser(userId)
     event.target.parentElement.remove()
-  }
+  } 
 })
 
+//Получить все карточки
 getCards.addEventListener('click', async ()=> {
-  load.textContent = "Данные загружаются"
-  await delay(3000)
-  users = await getUsers()
-  load.textContent = ""
-  renderUsers(users)
-  localStorage.setItem('users', JSON.stringify(users))
+  await loadUsers()
 })
