@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="load"></h1>
+
+  <ul id="users-list">
+    <template id="card-template">
+      <li class="card">
+        <h2 class="name"></h2>
+        <h2 class="surname"></h2>
+        <p class="age"></p>
+        <p class="email"></p>
+        <button id="delete-card">Удалить карточку</button>
+      </li>
+    </template>
+  </ul>
+  <button id="delete-all">Удалить все карточки</button>
+  <button id="get-cards">Получить карточки</button>
+  <script src="async.js"></script>
+</body>
+</html>

@@ -9,6 +9,10 @@ body {
   line-height: 18px;
 }
 
+.async-btn {
+  background-color: crimson;
+}
+
 .title {
   font-size: 70px;
   font-weight: 400;
